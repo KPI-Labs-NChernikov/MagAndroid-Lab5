@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lab5</string>
+    <string name="add_file_description">Add File</string>
+    <string name="enter_rfc_number_hint">Enter RFC number (e.g., 9902)</string>
+    <string name="start_download">Start Download</string>
+    <string name="manual_message">Welcome! To download an RFC document, enter its number (e.g., 9902) or the full PDF URL and click \'Download\'.</string>
+    <string name="dont_show_manual_again">Don\'t show this again</string>
+    <string name="ok">OK</string>
+    <string name="view">View</string>
+    <string name="delete">Delete</string>
+    <string name="rfc_file_name_example">rfc_name.pdf</string>
+</resources>
