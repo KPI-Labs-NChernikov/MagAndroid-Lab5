@@ -1,6 +1,5 @@
 package dev.nikita_chernikov.lab5
 
-import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
@@ -11,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import dev.nikita_chernikov.lab5.databinding.ActivityDownloadBinding
-import dev.nikita_chernikov.lab5.databinding.ActivityMainBinding
 import java.io.File
 
 class DownloadActivity : AppCompatActivity() {
@@ -64,12 +62,12 @@ class DownloadActivity : AppCompatActivity() {
 
     private fun isFileAlreadyPresent(userInput: String): Boolean {
         val finalFile = File(journalDir, "rfc$userInput.pdf")
-        val tempFile = File(journalDir, "$userInput.tmp")
+        val tempFile = File(journalDir, "rfc$userInput.pdf.tmp")
         return finalFile.exists() || tempFile.exists()
     }
 
     private fun isNetworkAvailable(): Boolean {
-        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
         val network = connectivityManager.activeNetwork ?: return false
         val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
         return when {
