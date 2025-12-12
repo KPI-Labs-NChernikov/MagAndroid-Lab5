@@ -9,4 +9,5 @@
     <string name="view">View</string>
     <string name="delete">Delete</string>
     <string name="rfc_file_name_example">rfc_name.pdf</string>
+    <string name="no_files">There are no files yet.</string>
 </resources>

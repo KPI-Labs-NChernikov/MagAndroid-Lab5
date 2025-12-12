@@ -5,6 +5,7 @@ import android.content.*
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.PopupWindow
@@ -108,6 +109,15 @@ class MainActivity : AppCompatActivity() {
     private fun updateFileList() {
         val files = journalDir.listFiles() ?: emptyArray()
         val sortedFiles = files.sortedByDescending { it.lastModified() }
+
+        if (sortedFiles.isEmpty()) {
+            binding.recyclerView.visibility = View.GONE
+            binding.emptyView.visibility = View.VISIBLE
+        } else {
+            binding.recyclerView.visibility = View.VISIBLE
+            binding.emptyView.visibility = View.GONE
+        }
+
         fileAdapter.updateFiles(sortedFiles)
     }
 
