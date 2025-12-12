@@ -52,9 +52,9 @@ class DownloadService : Service() {
                     Toast.makeText(applicationContext, "File rfc$userInput.pdf not found (404)", Toast.LENGTH_LONG).show()
                 }
             }
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             CoroutineScope(Dispatchers.Main).launch {
-                Toast.makeText(applicationContext, "Download failed for rfc$userInput.pdf: ${e.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Download failed for rfc$userInput.pdf: unexpected error.", Toast.LENGTH_LONG).show()
             }
         } finally {
             tempFile.delete()
